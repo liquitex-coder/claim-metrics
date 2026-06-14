@@ -589,5 +589,30 @@
    "note": "tests/test_evaluation_corpus.py + scoring + ears precision; 全緑で baseline 再現"
   },
   "other_repos_scope_note": "list_repos/add_repo ツールは本セッションで利用不可のためスコープ外リポは未確認。集計対象はディスク上の5リポ。"
+ },
+ "llm_self_audit": {
+  "subject": "本セッションの生成エージェント (LLM) のコミット主張",
+  "target_commit": "claim-metrics HEAD (feat(metrics): add 2026-06-14 ...)",
+  "exit_code": 0,
+  "agents": {
+   "process.commit_message_reality": {
+    "claim_count": 0,
+    "exit": 0
+   },
+   "process.changelog_reality": {
+    "claim_count": 0,
+    "exit": 0
+   },
+   "process.todo_promise": {
+    "claim_count": 0,
+    "exit": 0
+   },
+   "process.pr_description_drift": {
+    "claim_count": 0,
+    "exit": 0
+   }
+  },
+  "false_claims_detected": 0,
+  "verdict": "CLEAN — コミットメッセージ/CHANGELOG/TODO/PR の主張が実 diff と一致 (虚偽申告 0)"
  }
 }

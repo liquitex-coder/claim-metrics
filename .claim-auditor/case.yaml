@@ -1,0 +1,17 @@
+# Auditor を LLM（生成エージェント）の主張に適用する case_def。
+# Moat 層 (claim-vs-reality) を本リポの HEAD コミットへ向け、
+# コミットメッセージ/CHANGELOG/TODO の主張が実 diff と一致するか監査する。
+schema_version: 1
+case:
+  id: "llm_claim_audit"
+  description: |
+    Apply Claim-Auditor's moat agents to the LLM agent's own commit claims.
+targets:
+  - root: "."
+    languages: ["*"]
+    environments: ["*"]
+agents:
+  - process.commit_message_reality
+  - process.changelog_reality
+  - process.todo_promise
+  - process.pr_description_drift
