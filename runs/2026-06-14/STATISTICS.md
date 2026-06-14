@@ -13,6 +13,20 @@ Auditor は **自プロダクト群**にも、**LLM（本セッションのエ�
 
 ---
 
+## 可視化（グラフ）
+
+> 生成: `python3 scripts/make_charts.py runs/2026-06-14`（依存 matplotlib のみ）。
+> インタラクティブ版は [`dashboard.html`](dashboard.html)。
+
+| | |
+|---|---|
+| ![軸別被覆](charts/01_builder_axis_coverage.png) | ![分類分布](charts/02_classification_dist.png) |
+| ![自己適用 claim](charts/03_auditor_self_claims.png) | ![コーパス P/R/F1](charts/04_corpus_prf.png) |
+| ![インベントリ](charts/05_inventory.png) | ![テスト](charts/06_tests.png) |
+| ![異常区分](charts/07_anomaly_disposition.png) | |
+
+---
+
 ## 0. 案件内容（薄い軸を意図的に踏む合成案件）
 
 | Req | 言語 | ツール | フレームワーク | 想定サブドメイン |

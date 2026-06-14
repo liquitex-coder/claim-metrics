@@ -19,6 +19,14 @@ Claim プラットフォーム（**Builder → Security → Auditor**）の統�
 |---|---|---|---|
 | 2026-06-14 | `claim-feedback` | Builder→Security→Auditor 統合 + 自己適用 + LLM 主張監査。薄い軸（Go/TS/React）検証 | [STATISTICS.md](runs/2026-06-14/STATISTICS.md) / [stats.json](runs/2026-06-14/stats.json) |
 
+## 可視化
+
+グラフは [`runs/2026-06-14/charts/`](runs/2026-06-14/charts/)（PNG）、ダッシュボードは
+[`runs/2026-06-14/dashboard.html`](runs/2026-06-14/dashboard.html)（依存ゼロの静的 HTML）。
+再生成: `python3 scripts/make_charts.py runs/2026-06-14`（matplotlib のみ）。
+
+![軸別被覆](runs/2026-06-14/charts/01_builder_axis_coverage.png)
+
 ## ハイライト（2026-06-14）
 
 - テスト横断: **2482 passed / 0 failed**（Auditor 2089・Builder 384・Security 9）
