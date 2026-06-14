@@ -1,0 +1,40 @@
+{
+ "case_id": "c3-rust-checksum",
+ "classification": {
+  "by_subdomain": {
+   "1b": 2,
+   "1a": 2,
+   "1e": 1,
+   "2c": 1
+  },
+  "fragments": 6,
+  "classified": 6,
+  "classified_rate": 1.0
+ },
+ "builder": {
+  "rust": {
+   "artifacts_total": 0,
+   "artifact_states": {},
+   "assurance": {},
+   "specialists_used": {},
+   "open_questions": 6,
+   "stage_records": 27
+  },
+  "all": {
+   "artifacts_total": 5,
+   "artifact_states": {
+    "AUDITED_CLEAN": 5
+   },
+   "assurance": {
+    "PROVEN": 5
+   },
+   "specialists_used": {
+    "lang.go.pure_function": 2,
+    "lang.typescript.type_structural": 2,
+    "lang.python.provable": 1
+   },
+   "open_questions": 1,
+   "stage_records": 37
+  }
+ }
+}

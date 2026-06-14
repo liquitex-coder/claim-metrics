@@ -1,0 +1,786 @@
+{
+  "artifacts": [
+    {
+      "assurance": "PROVEN",
+      "content": "// scaffold-filled stub for 1b\n",
+      "fragment_id": "frag-001",
+      "history": [
+        "PROPOSED",
+        "REBUTTED_CLEAN",
+        "AUDITED_CLEAN"
+      ],
+      "id": "art-frag-001-15ad30cd4fc2",
+      "last_finding": null,
+      "provenance": {
+        "origin": "lang.go.pure_function",
+        "proposed_by": "llm"
+      },
+      "signature": null,
+      "state": "AUDITED_CLEAN",
+      "subdomain_id": "1b",
+      "tokens": [
+        {
+          "citation": "frag:frag-001",
+          "kind": "clause",
+          "text": "frag-001"
+        },
+        {
+          "citation": "subdomain:1b",
+          "kind": "identifier",
+          "text": "1b"
+        }
+      ]
+    },
+    {
+      "assurance": "PROVEN",
+      "content": "// scaffold-filled stub for 1b\n",
+      "fragment_id": "frag-002",
+      "history": [
+        "PROPOSED",
+        "REBUTTED_CLEAN",
+        "AUDITED_CLEAN"
+      ],
+      "id": "art-frag-002-b750f1bfb1c7",
+      "last_finding": null,
+      "provenance": {
+        "origin": "lang.go.pure_function",
+        "proposed_by": "llm"
+      },
+      "signature": null,
+      "state": "AUDITED_CLEAN",
+      "subdomain_id": "1b",
+      "tokens": [
+        {
+          "citation": "frag:frag-002",
+          "kind": "clause",
+          "text": "frag-002"
+        },
+        {
+          "citation": "subdomain:1b",
+          "kind": "identifier",
+          "text": "1b"
+        }
+      ]
+    },
+    {
+      "assurance": "PROVEN",
+      "content": "// sub-domain 1a — type/structural\n// construction: encode the property in types; make illegal states unrepresentable\n// verification: type checker / exhaustiveness check\n// realizes fragment frag-003\n// make illegal states unrepresentable; the type checker is the proof.\nexport type FFrag003 =\n  | { kind: 'empty' }\n  | { kind: 'value'; value: string };\n\nexport function renderFFrag003(s: FFrag003): string {\n  switch (s.kind) {\n    case 'empty': return '';\n    case 'value': return s.value;\n    // exhaustiveness is enforced by tsc: no default needed\n  }\n}\n",
+      "fragment_id": "frag-003",
+      "history": [
+        "PROPOSED",
+        "REBUTTED_CLEAN",
+        "AUDITED_CLEAN"
+      ],
+      "id": "art-frag-003-b1aff1325e9b",
+      "last_finding": null,
+      "provenance": {
+        "origin": "lang.typescript.type_structural",
+        "proposed_by": "llm"
+      },
+      "signature": null,
+      "state": "AUDITED_CLEAN",
+      "subdomain_id": "1a",
+      "tokens": [
+        {
+          "citation": "frag:frag-003",
+          "kind": "clause",
+          "text": "frag-003"
+        },
+        {
+          "citation": "subdomain:1a",
+          "kind": "identifier",
+          "text": "1a"
+        }
+      ]
+    },
+    {
+      "assurance": "PROVEN",
+      "content": "// sub-domain 1a — type/structural\n// construction: encode the property in types; make illegal states unrepresentable\n// verification: type checker / exhaustiveness check\n// realizes fragment frag-004\n// make illegal states unrepresentable; the type checker is the proof.\nexport type FFrag004 =\n  | { kind: 'empty' }\n  | { kind: 'value'; value: string };\n\nexport function renderFFrag004(s: FFrag004): string {\n  switch (s.kind) {\n    case 'empty': return '';\n    case 'value': return s.value;\n    // exhaustiveness is enforced by tsc: no default needed\n  }\n}\n",
+      "fragment_id": "frag-004",
+      "history": [
+        "PROPOSED",
+        "REBUTTED_CLEAN",
+        "AUDITED_CLEAN"
+      ],
+      "id": "art-frag-004-3d7606b56c5f",
+      "last_finding": null,
+      "provenance": {
+        "origin": "lang.typescript.type_structural",
+        "proposed_by": "llm"
+      },
+      "signature": null,
+      "state": "AUDITED_CLEAN",
+      "subdomain_id": "1a",
+      "tokens": [
+        {
+          "citation": "frag:frag-004",
+          "kind": "clause",
+          "text": "frag-004"
+        },
+        {
+          "citation": "subdomain:1a",
+          "kind": "identifier",
+          "text": "1a"
+        }
+      ]
+    },
+    {
+      "assurance": "PROVEN",
+      "content": "\"\"\" sub-domain 1e — grammar/parser\n construction: define the grammar; derive the artifact; state the round-trip law\n verification: round-trip property + grammar-conformance check\n realizes fragment frag-005-a\n\"\"\"\nfrom __future__ import annotations\n\n\ndef parse_f_frag_005_a(text: str) -> dict[str, object]:\n    \"\"\"Parse the artifact per its grammar; total over well-formed input.\"\"\"\n    return {}  # TODO(impl): grammar for frag-005-a\n\n\ndef serialize_f_frag_005_a(node: dict[str, object]) -> str:\n    return \"\"  # TODO(impl): inverse of parse_f_frag_005_a\n\n\ndef test_f_frag_005_a_round_trips() -> None:\n    # grammar-conformance + round-trip law: serialize(parse(x)) preserves meaning\n    assert parse_f_frag_005_a(serialize_f_frag_005_a({})) == {}\n",
+      "fragment_id": "frag-005-a",
+      "history": [
+        "PROPOSED",
+        "REBUTTED_CLEAN",
+        "AUDITED_CLEAN"
+      ],
+      "id": "art-frag-005-a-830f63c09443",
+      "last_finding": null,
+      "provenance": {
+        "origin": "lang.python.provable",
+        "proposed_by": "llm"
+      },
+      "signature": null,
+      "state": "AUDITED_CLEAN",
+      "subdomain_id": "1e",
+      "tokens": [
+        {
+          "citation": "frag:frag-005-a",
+          "kind": "clause",
+          "text": "frag-005-a"
+        },
+        {
+          "citation": "subdomain:1e",
+          "kind": "identifier",
+          "text": "1e"
+        }
+      ]
+    }
+  ],
+  "classifications": [
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-001",
+      "routed_out": false,
+      "subdomain_id": "1b"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-002",
+      "routed_out": false,
+      "subdomain_id": "1b"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-003",
+      "routed_out": false,
+      "subdomain_id": "1a"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-004",
+      "routed_out": false,
+      "subdomain_id": "1a"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-005-a",
+      "routed_out": false,
+      "subdomain_id": "1e"
+    },
+    {
+      "assurance_cap": "NO_COUNTEREXAMPLE",
+      "confidence": 0.85,
+      "family": "REFUTABLE",
+      "fragment_id": "frag-005-b",
+      "routed_out": false,
+      "subdomain_id": "2c"
+    }
+  ],
+  "config_snapshot": {
+    "audit_backend": "stub",
+    "b_fuzz": 256,
+    "c_stat": 0.95,
+    "max_specialists": 8,
+    "n_min": 20,
+    "tau_adopt": 0.5,
+    "tau_class": 0.8
+  },
+  "fragments": [
+    {
+      "id": "frag-001",
+      "security_relevant": false,
+      "source_anchor": "L4",
+      "text": "The `crc32` function shall be a pure function: deterministic, idempotent, and the"
+    },
+    {
+      "id": "frag-002",
+      "security_relevant": false,
+      "source_anchor": "L5",
+      "text": "round-trip of encode then decode reproduces identical counts."
+    },
+    {
+      "id": "frag-003",
+      "security_relevant": false,
+      "source_anchor": "L8",
+      "text": "The `Digest` type shall be non-null and its `kind` field shall be an enum of"
+    },
+    {
+      "id": "frag-004",
+      "security_relevant": false,
+      "source_anchor": "L9",
+      "text": "{crc32, sha256}; the data type must be well-formed."
+    },
+    {
+      "id": "frag-005-a",
+      "security_relevant": false,
+      "source_anchor": "L12",
+      "text": "The parser shall never crash on arbitrary input and always terminates."
+    },
+    {
+      "id": "frag-005-b",
+      "security_relevant": false,
+      "source_anchor": "L12",
+      "text": "The parser shall never crash on arbitrary input and always terminates."
+    }
+  ],
+  "open_questions": [
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-005-b",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 2c: no specialist declares scope for sub-domain '2c'"
+    }
+  ],
+  "schema_version": 1,
+  "stage_records": [
+    {
+      "deterministic": false,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "text": "The `crc32` function shall be a pure function: deterministic, idempotent, and the"
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "text": "round-trip of encode then decode reproduces identical counts."
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "text": "The `Digest` type shall be non-null and its `kind` field shall be an enum of"
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "text": "{crc32, sha256}; the data type must be well-formed."
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-005",
+      "inputs": {
+        "text": "The parser shall never crash on arbitrary input and always terminates."
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005",
+      "inputs": {
+        "text": "The parser shall never crash on arbitrary input and always terminates."
+      },
+      "outputs": {
+        "decomposed_into": [
+          "frag-005-a",
+          "frag-005-b"
+        ],
+        "edges": [
+          [
+            "frag-005",
+            "frag-005-a"
+          ],
+          [
+            "frag-005",
+            "frag-005-b"
+          ]
+        ],
+        "focus": [
+          "1e",
+          "2c"
+        ]
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "<order>",
+      "inputs": {
+        "n": 6
+      },
+      "outputs": {
+        "cycle": [],
+        "order": [
+          "frag-001",
+          "frag-002",
+          "frag-003",
+          "frag-004",
+          "frag-005-a",
+          "frag-005-b"
+        ]
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "text": "The `crc32` function shall be a pure function: deterministic, idempotent, and the"
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1b"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "subdomain": "1b"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-001/1b",
+          "law_or_invariant:law_or_invariant/frag-001/1b",
+          "property_test:property_test/frag-001/1b"
+        ],
+        "scaffold_items": [
+          "state the law; keep the function side-effect-free",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "attempt": 1,
+        "scaffold": "1b"
+      },
+      "outputs": {
+        "artifact": "art-frag-001-15ad30cd4fc2",
+        "state": "PROPOSED"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "artifact": "art-frag-001-15ad30cd4fc2"
+      },
+      "outputs": {
+        "state": "REBUTTED_CLEAN"
+      },
+      "stage": "S5"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "artifact": "art-frag-001-15ad30cd4fc2"
+      },
+      "outputs": {
+        "state": "AUDITED_CLEAN"
+      },
+      "stage": "S6"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "text": "round-trip of encode then decode reproduces identical counts."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1b"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "subdomain": "1b"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-002/1b",
+          "law_or_invariant:law_or_invariant/frag-002/1b",
+          "property_test:property_test/frag-002/1b"
+        ],
+        "scaffold_items": [
+          "state the law; keep the function side-effect-free",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "attempt": 1,
+        "scaffold": "1b"
+      },
+      "outputs": {
+        "artifact": "art-frag-002-b750f1bfb1c7",
+        "state": "PROPOSED"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "artifact": "art-frag-002-b750f1bfb1c7"
+      },
+      "outputs": {
+        "state": "REBUTTED_CLEAN"
+      },
+      "stage": "S5"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "artifact": "art-frag-002-b750f1bfb1c7"
+      },
+      "outputs": {
+        "state": "AUDITED_CLEAN"
+      },
+      "stage": "S6"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "text": "The `Digest` type shall be non-null and its `kind` field shall be an enum of"
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1a"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "subdomain": "1a"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-003/1a",
+          "law_or_invariant:law_or_invariant/frag-003/1a",
+          "property_test:property_test/frag-003/1a"
+        ],
+        "scaffold_items": [
+          "encode the property in types; make illegal states unrepresentable",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "attempt": 1,
+        "scaffold": "1a"
+      },
+      "outputs": {
+        "artifact": "art-frag-003-b1aff1325e9b",
+        "state": "PROPOSED"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "artifact": "art-frag-003-b1aff1325e9b"
+      },
+      "outputs": {
+        "state": "REBUTTED_CLEAN"
+      },
+      "stage": "S5"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "artifact": "art-frag-003-b1aff1325e9b"
+      },
+      "outputs": {
+        "state": "AUDITED_CLEAN"
+      },
+      "stage": "S6"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "text": "{crc32, sha256}; the data type must be well-formed."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1a"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "subdomain": "1a"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-004/1a",
+          "law_or_invariant:law_or_invariant/frag-004/1a",
+          "property_test:property_test/frag-004/1a"
+        ],
+        "scaffold_items": [
+          "encode the property in types; make illegal states unrepresentable",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "attempt": 1,
+        "scaffold": "1a"
+      },
+      "outputs": {
+        "artifact": "art-frag-004-3d7606b56c5f",
+        "state": "PROPOSED"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "artifact": "art-frag-004-3d7606b56c5f"
+      },
+      "outputs": {
+        "state": "REBUTTED_CLEAN"
+      },
+      "stage": "S5"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "artifact": "art-frag-004-3d7606b56c5f"
+      },
+      "outputs": {
+        "state": "AUDITED_CLEAN"
+      },
+      "stage": "S6"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "text": "The parser shall never crash on arbitrary input and always terminates."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1e"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "subdomain": "1e"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-005-a/1e",
+          "law_or_invariant:law_or_invariant/frag-005-a/1e",
+          "property_test:property_test/frag-005-a/1e"
+        ],
+        "scaffold_items": [
+          "define the grammar; derive the artifact; state the round-trip law",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "attempt": 1,
+        "scaffold": "1e"
+      },
+      "outputs": {
+        "artifact": "art-frag-005-a-830f63c09443",
+        "state": "PROPOSED"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "artifact": "art-frag-005-a-830f63c09443"
+      },
+      "outputs": {
+        "state": "REBUTTED_CLEAN"
+      },
+      "stage": "S5"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "artifact": "art-frag-005-a-830f63c09443"
+      },
+      "outputs": {
+        "state": "AUDITED_CLEAN"
+      },
+      "stage": "S6"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-b",
+      "inputs": {
+        "text": "The parser shall never crash on arbitrary input and always terminates."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "2c"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-b",
+      "inputs": {
+        "subdomain": "2c"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "boundary_catalog:boundary_catalog/frag-005-b/2c",
+          "property_catalog:property_catalog/frag-005-b/2c"
+        ],
+        "scaffold_items": [
+          "state the must-not (no crash; terminates within bound)",
+          "enumerate boundaries / select relations",
+          "rebuttal probe harness"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-005-b",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '2c'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "<consistency>",
+      "inputs": {
+        "n_artifacts": 5
+      },
+      "outputs": {
+        "conflicts": []
+      },
+      "stage": "S8"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "<assurance>",
+      "inputs": {
+        "n_composites": 1
+      },
+      "outputs": {
+        "frag-005": {
+          "label": null,
+          "parts": {
+            "frag-005-a": "PROVEN",
+            "frag-005-b": null
+          }
+        }
+      },
+      "stage": "S8"
+    }
+  ]
+}

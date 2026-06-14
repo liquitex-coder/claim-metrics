@@ -1,0 +1,50 @@
+{
+ "case_id": "c2-data-migration",
+ "classification": {
+  "by_subdomain": {
+   "1e": 2,
+   "2a": 2,
+   "3a": 2,
+   "1d": 2
+  },
+  "fragments": 8,
+  "classified": 8,
+  "classified_rate": 1.0
+ },
+ "builder": {
+  "sql": {
+   "artifacts_total": 0,
+   "artifact_states": {},
+   "assurance": {},
+   "specialists_used": {},
+   "open_questions": 8,
+   "stage_records": 34
+  },
+  "shell": {
+   "artifacts_total": 0,
+   "artifact_states": {},
+   "assurance": {},
+   "specialists_used": {},
+   "open_questions": 8,
+   "stage_records": 34
+  },
+  "all": {
+   "artifacts_total": 8,
+   "artifact_states": {
+    "AUDITED_CLEAN": 8
+   },
+   "assurance": {
+    "PROVEN": 4,
+    "NO_COUNTEREXAMPLE": 2,
+    "TESTED_N": 2
+   },
+   "specialists_used": {
+    "lang.python.provable": 4,
+    "lang.python.boundary": 2,
+    "lang.python.contract": 2
+   },
+   "open_questions": 0,
+   "stage_records": 50
+  }
+ }
+}

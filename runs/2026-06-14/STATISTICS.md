@@ -23,7 +23,7 @@ Auditor は **自プロダクト群**にも、**LLM（本セッションのエ�
 | ![軸別被覆](charts/01_builder_axis_coverage.png) | ![分類分布](charts/02_classification_dist.png) |
 | ![自己適用 claim](charts/03_auditor_self_claims.png) | ![コーパス P/R/F1](charts/04_corpus_prf.png) |
 | ![インベントリ](charts/05_inventory.png) | ![テスト](charts/06_tests.png) |
-| ![異常区分](charts/07_anomaly_disposition.png) | |
+| ![異常区分](charts/07_anomaly_disposition.png) | ![案件ループ](charts/08_case_loop_trend.png) |
 
 ---
 
@@ -180,6 +180,30 @@ overall: tp 3 / fp 0 / fn 0 / **P=R=F1=1.00**。
 | A4 | mypy 自己適用の 20 claim が全て `types-PyYAML` 未導入起因。リポの mypy 設定はスタブ前提 | 低（環境、`pip install types-PyYAML` で解消） | 環境 |
 | A5 | 19 個の subprocess CLI テストが editable install 前提（素の PYTHONPATH では `ModuleNotFoundError`）。`jsonschema` 未導入で 1 collection error | 低（CI/dev セットアップ脆弱性） | テストハーネス |
 | A6 | Builder `delivered=0`（`--signer` 無し時）— **設計どおり**（署名を捏造しない）だが、統計上「失敗」と誤読されうる | 情報 | 仕様（注記が必要） |
+| A7 | **言語ミスマッチ生成**: `--language` 無しの `build` は fragment の意図言語を推論せず、サブドメイン一致だけで specialist を選ぶ。Rust 案件→Go specialist、SQL/shell 案件→Python specialist が**黙って**生成される。案件ループ 5 件で **artifact の 43.75% が言語ミスマッチ**（c2 SQL/shell 100%・c3 Rust 100%・c4 ML に Go 混入 11%）。正しい `--language` を渡すとゲートが効き honest に open question 化（c3: 5→0 artifact / open 1→6） | **高**（誤った言語のコードを生成しうる） | プロダクト改善 |
+
+> A7 の定量化は [`leaderboard.json`](leaderboard.json) と
+> [`charts/08_case_loop_trend.png`](charts/08_case_loop_trend.png) を参照。
+
+### 案件ループ（c1..c5）— 計画どおり異なる案件を連続実行
+
+「異なる案件を回す → 異常/修正に気づいたら同案件を正しい条件で再実行 → 次へ」のループ。
+
+| 案件 | 意図言語 | fragments | 分類率 | all artifact | 言語ミスマッチ | 是正（正しい `--language`） |
+|---|---|---|---|---|---|---|
+| c1 claim-feedback | go/ts/python | 10 | 90% | 9 | 0 (0%) | — |
+| c2 data-migration | sql/shell | 8 | 100% | 8 | 8 (100%) | sql/shell ゲートで 0 artifact（specialist 不在を正直に表面化） |
+| c3 rust-checksum | rust | 6 | 100% | 5 | 5 (100%) | rust ゲートで 0 artifact / open 6 |
+| c4 ml-ranker | python | 10 | 90% | 9 | 1 (11%) | ml_probabilistic 稼働（薄い軸を実行） |
+| c5 go-concurrency | go | 4 | 100% | 1 | 0 (0%) | 5a/5c は specialist 不在で open（並行/soak 未被覆） |
+| **計** | — | **38** | 平均 96% | **32** | **14 (43.75%)** | — |
+
+**ループで判明した改善点（追加）:**
+- **I7 (A7):** fragment に意図言語タグを持たせ、specialist マッチを言語×サブドメインの
+  両軸で行う。少なくとも artifact provenance に「要求言語 ≠ 生成言語」警告を出し、
+  無フィルタ build で言語ミスマッチを silent に通さない。
+- **I8:** Builder specialist は現状 go/python/typescript の 3 言語のみ。rust/sql/shell は
+  Auditor 側に adapter があるのに Builder 側 specialist が無い（生成と監査の言語被覆が非対称）。
 
 ## 7. 改善点（Improvement）
 

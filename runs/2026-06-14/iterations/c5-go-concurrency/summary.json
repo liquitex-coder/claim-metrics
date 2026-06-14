@@ -1,0 +1,43 @@
+{
+ "case_id": "c5-go-concurrency",
+ "classification": {
+  "by_subdomain": {
+   "5a": 2,
+   "1b": 1,
+   "5c": 1
+  },
+  "fragments": 4,
+  "classified": 4,
+  "classified_rate": 1.0
+ },
+ "builder": {
+  "go": {
+   "artifacts_total": 1,
+   "artifact_states": {
+    "AUDITED_CLEAN": 1
+   },
+   "assurance": {
+    "PROVEN": 1
+   },
+   "specialists_used": {
+    "lang.go.pure_function": 1
+   },
+   "open_questions": 3,
+   "stage_records": 20
+  },
+  "all": {
+   "artifacts_total": 1,
+   "artifact_states": {
+    "AUDITED_CLEAN": 1
+   },
+   "assurance": {
+    "PROVEN": 1
+   },
+   "specialists_used": {
+    "lang.go.pure_function": 1
+   },
+   "open_questions": 3,
+   "stage_records": 20
+  }
+ }
+}
