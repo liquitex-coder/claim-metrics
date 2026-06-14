@@ -19,6 +19,13 @@ Claim プラットフォーム（**Builder → Security → Auditor**）の統�
 |---|---|---|---|
 | 2026-06-14 | `claim-feedback` | Builder→Security→Auditor 統合 + 自己適用 + LLM 主張監査。薄い軸（Go/TS/React）検証 | [STATISTICS.md](runs/2026-06-14/STATISTICS.md) / [stats.json](runs/2026-06-14/stats.json) |
 
+## 実体評価（必読）
+
+数字の量産ではなく「本当に機能しているか」を中身まで開けて判定した評価書:
+**[`runs/2026-06-14/ASSESSMENT.md`](runs/2026-06-14/ASSESSMENT.md)**。
+要点: Auditor=本物（虚偽をライブ捕捉）／Security=構造は正しいがリファレンス級・初回未発火／
+Builder=骨格は本物だが生成は空スタブ。
+
 ## 可視化
 
 グラフは [`runs/2026-06-14/charts/`](runs/2026-06-14/charts/)（PNG）、ダッシュボードは

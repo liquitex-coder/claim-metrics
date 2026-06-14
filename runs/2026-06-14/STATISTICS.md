@@ -235,12 +235,18 @@ overall: tp 3 / fp 0 / fn 0 / **P=R=F1=1.00**。
 
 ## 9. 結論 — 各機能は機能しているか
 
-| 機能 | 判定 | 根拠 |
+> ⚠ **実体評価は [`ASSESSMENT.md`](ASSESSMENT.md) が正。** 下表は当初の機能確認だが、
+> 中身を開けた結果いくつかを訂正した（artifact は空スタブ＝生成実体なし、Security は
+> 初回案件で未発火）。数字と実体の区別は ASSESSMENT.md §5 を参照。
+
+| 機能 | 当初判定 | 実体（訂正後） |
 |---|---|---|
-| Builder S1..S8 パイプライン | ✅ 機能 | 9/10 fragment を分類→生成→AUDITED_CLEAN、61 stage records |
-| 言語/ツール/FW プラグイン（薄い軸） | ⚠ 機能（被覆薄い） | Go/React は各 1 サブドメインのみ。connect は成功、被覆拡張が課題 |
-| Security 静的/動的ループ | ✅ 機能 | 適合テスト 9 緑、routing 設計どおり |
-| Auditor 自己適用（dogfooding） | ✅ 機能 | 4 リポで claim-vs-reality 検出、real defect 0 を確認 |
-| Critical Taboo Gate | ✅ 機能 | secret/shell/sql/vcs 全クリーン |
-| Auditor → LLM 主張監査 | ✅ 機能 | [`llm-audit/`](llm-audit/) 参照（コミット主張 vs 実 diff） |
-| 統合（Builder→Security→Auditor） | ✅ 連携 | 1 案件を 3 製品横断で完走 |
+| Builder パイプライン配管 | ✅ | ✅ 配管は本物・決定論的 |
+| Builder コード生成 | （未検証） | 🟠 **空スタブ**（`// scaffold-filled stub`）。実生成は LLM backend 前提 |
+| 言語/ツール/FW プラグイン | ⚠ | 🟠 connect は成功するが言語ゲート欠落（A7）＋ go/python/ts のみ |
+| Security 静的/動的ループ | ✅ | 🟡 構造・グレードは正しい（直接駆動で確認）。**初回案件では未発火** |
+| Auditor 自己適用／監査 | ✅ | ✅ **本物**（仕込んだ虚偽をライブ捕捉、corpus P=1.00） |
+| Auditor 案件正規化 | ✅ | ✅ 実 set 演算 |
+| Critical Taboo Gate | ✅ | ✅ secret/shell/sql/vcs クリーン |
+| Auditor → LLM 主張監査 | ✅ | ✅ 虚偽申告 0 |
+| 統合 Builder→Security→Auditor | ✅ 連携 | 🟡 横断は走るが、生成が空スタブのため delivery は構造的に未到達 |
