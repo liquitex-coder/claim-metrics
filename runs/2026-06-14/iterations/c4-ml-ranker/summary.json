@@ -1,0 +1,50 @@
+{
+ "case_id": "c4-ml-ranker",
+ "classification": {
+  "by_subdomain": {
+   "4a": 1,
+   "4b": 3,
+   "4d": 3,
+   "1b": 1,
+   "4c": 1,
+   "8": 1
+  },
+  "fragments": 10,
+  "classified": 9,
+  "classified_rate": 0.9
+ },
+ "builder": {
+  "python": {
+   "artifacts_total": 9,
+   "artifact_states": {
+    "AUDITED_CLEAN": 9
+   },
+   "assurance": {
+    "IN_DISTRIBUTION": 8,
+    "PROVEN": 1
+   },
+   "specialists_used": {
+    "domain.ml_probabilistic": 8,
+    "lang.python.pure_function": 1
+   },
+   "open_questions": 2,
+   "stage_records": 61
+  },
+  "all": {
+   "artifacts_total": 9,
+   "artifact_states": {
+    "AUDITED_CLEAN": 9
+   },
+   "assurance": {
+    "IN_DISTRIBUTION": 8,
+    "PROVEN": 1
+   },
+   "specialists_used": {
+    "domain.ml_probabilistic": 8,
+    "lang.go.pure_function": 1
+   },
+   "open_questions": 2,
+   "stage_records": 61
+  }
+ }
+}

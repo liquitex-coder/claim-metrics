@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>claim-metrics — 統合検証ダッシュボード 2026-06-14</title>
+<style>
+  :root{--bg:#0f1419;--card:#1a212b;--fg:#e6edf3;--mut:#9aa7b4;--ok:#2e8b57;--warn:#e0a800;--bad:#c0392b;--blue:#2c6fbb;--line:#2a3340}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,"Segoe UI",sans-serif}
+  header{padding:24px 28px;border-bottom:1px solid var(--line)}
+  h1{margin:0 0 4px;font-size:20px}
+  .sub{color:var(--mut);font-size:13px}
+  main{padding:24px 28px;max-width:1200px;margin:0 auto}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:28px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .kpi .n{font-size:26px;font-weight:700}
+  .kpi .l{color:var(--mut);font-size:12px;margin-top:2px}
+  .ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}.blue{color:var(--blue)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .card h2{margin:0 0 10px;font-size:14px;color:var(--mut);font-weight:600}
+  .card img{width:100%;height:auto;border-radius:6px;background:#fff}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+  th{color:var(--mut);font-weight:600}
+  footer{color:var(--mut);font-size:12px;padding:20px 28px;border-top:1px solid var(--line);margin-top:24px}
+  a{color:var(--blue)}
+</style>
+</head>
+<body>
+<header>
+  <h1>統合検証ダッシュボード — 案件 <code>claim-feedback</code></h1>
+  <div class="sub">Builder → Security → Auditor 連携 / Auditor 自己適用 + LLM 主張監査 · 2026-06-14</div>
+</header>
+<main>
+  <section class="kpis">
+    <div class="kpi"><div class="n ok">2482</div><div class="l">テスト passed (failed 0)</div></div>
+    <div class="kpi"><div class="n blue">90%</div><div class="l">Builder 分類率 (9/10)</div></div>
+    <div class="kpi"><div class="n ok">0</div><div class="l">Auditor 自己適用 real defect</div></div>
+    <div class="kpi"><div class="n ok">0</div><div class="l">LLM 虚偽申告</div></div>
+    <div class="kpi"><div class="n blue">0.941</div><div class="l">案件テストコーパス F1 (51 件)</div></div>
+    <div class="kpi"><div class="n warn">6</div><div class="l">検出した異常</div></div>
+    <div class="kpi"><div class="n">46 / 8</div><div class="l">Auditor agents / Builder specialists</div></div>
+    <div class="kpi"><div class="n">34 / 0</div><div class="l">Auditor invocations / CC subagents</div></div>
+    <div class="kpi"><div class="n blue">5</div><div class="l">回した案件 (c1..c5)</div></div>
+    <div class="kpi"><div class="n bad">43.8%</div><div class="l">言語ミスマッチ率 (A7)</div></div>
+  </section>
+
+  <section class="grid">
+    <div class="card"><h2>Builder: 言語/ツール/FW 軸別 生成被覆</h2><img src="charts/01_builder_axis_coverage.png" alt="軸別被覆"></div>
+    <div class="card"><h2>Builder: サブドメイン分類分布</h2><img src="charts/02_classification_dist.png" alt="分類分布"></div>
+    <div class="card"><h2>Auditor 自己適用: リポ別 claim 数</h2><img src="charts/03_auditor_self_claims.png" alt="自己適用 claim"></div>
+    <div class="card"><h2>既存案件テストコーパス: P/R/F1</h2><img src="charts/04_corpus_prf.png" alt="コーパス PRF"></div>
+    <div class="card"><h2>Auditor インベントリ</h2><img src="charts/05_inventory.png" alt="インベントリ"></div>
+    <div class="card"><h2>テスト横断 passed</h2><img src="charts/06_tests.png" alt="テスト"></div>
+    <div class="card"><h2>検出した異常の対応区分</h2><img src="charts/07_anomaly_disposition.png" alt="異常区分"></div>
+    <div class="card"><h2>案件ループ: 分類率 vs 言語ミスマッチ率 (A7)</h2><img src="charts/08_case_loop_trend.png" alt="案件ループ"></div>
+    <div class="card"><h2>異常サマリ</h2>
+      <table>
+        <tr><th>ID</th><th>内容</th><th>区分</th></tr>
+        <tr><td>A1</td><td>分類器が provable 表現取りこぼし</td><td class="warn">改善</td></tr>
+        <tr><td>A2</td><td>複数行文の fragmentation 分断</td><td class="warn">改善</td></tr>
+        <tr><td>A3</td><td>c_drift 実ドリフトが claim 数に不可視</td><td class="warn">改善</td></tr>
+        <tr><td>A4</td><td>types-PyYAML 未導入 (mypy 20)</td><td class="ok">解消</td></tr>
+        <tr><td>A5</td><td>subprocess テスト editable 前提</td><td class="ok">解消</td></tr>
+        <tr><td>A6</td><td>delivered=0 (署名捏造しない設計)</td><td>仕様</td></tr>
+      </table>
+    </div>
+  </section>
+</main>
+<footer>
+  単一の真実源: <a href="stats.json">stats.json</a> · 詳細: <a href="STATISTICS.md">STATISTICS.md</a> ·
+  再生成: <code>python3 scripts/make_charts.py runs/2026-06-14</code>
+</footer>
+</body>
+</html>

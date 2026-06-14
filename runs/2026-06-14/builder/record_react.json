@@ -1,0 +1,955 @@
+{
+  "artifacts": [
+    {
+      "assurance": "AGREED",
+      "content": "// sub-domain 6b — UX/interaction\n// construction: define scenarios/acceptance criteria; review\n// verification: scenario tests + human review\n// realizes fragment frag-006\n// UX correctness is judged against agreed acceptance scenarios + review.\nimport React from 'react';\n\nexport interface FFrag006Props { label: string; onAct: () => void; }\n\nexport function FFrag006(props: FFrag006Props): JSX.Element {\n  // TODO(impl): realize the agreed interaction scenario\n  return <button onClick={props.onAct}>{props.label}</button>;\n}\n\n// scenario test (acceptance criteria agreed with the Author): render + act\n// test('FFrag006 fires onAct', () => { /* render, click, assert */ });\n",
+      "fragment_id": "frag-006",
+      "history": [
+        "PROPOSED",
+        "REBUTTED_CLEAN",
+        "AUDITED_CLEAN"
+      ],
+      "id": "art-frag-006-6fea53aa0257",
+      "last_finding": null,
+      "provenance": {
+        "origin": "framework.react_component",
+        "proposed_by": "llm"
+      },
+      "signature": null,
+      "state": "AUDITED_CLEAN",
+      "subdomain_id": "6b",
+      "tokens": [
+        {
+          "citation": "frag:frag-006",
+          "kind": "clause",
+          "text": "frag-006"
+        },
+        {
+          "citation": "subdomain:6b",
+          "kind": "identifier",
+          "text": "6b"
+        }
+      ]
+    },
+    {
+      "assurance": "AGREED",
+      "content": "// sub-domain 6b — UX/interaction\n// construction: define scenarios/acceptance criteria; review\n// verification: scenario tests + human review\n// realizes fragment frag-007\n// UX correctness is judged against agreed acceptance scenarios + review.\nimport React from 'react';\n\nexport interface FFrag007Props { label: string; onAct: () => void; }\n\nexport function FFrag007(props: FFrag007Props): JSX.Element {\n  // TODO(impl): realize the agreed interaction scenario\n  return <button onClick={props.onAct}>{props.label}</button>;\n}\n\n// scenario test (acceptance criteria agreed with the Author): render + act\n// test('FFrag007 fires onAct', () => { /* render, click, assert */ });\n",
+      "fragment_id": "frag-007",
+      "history": [
+        "PROPOSED",
+        "REBUTTED_CLEAN",
+        "AUDITED_CLEAN"
+      ],
+      "id": "art-frag-007-b5049ec13165",
+      "last_finding": null,
+      "provenance": {
+        "origin": "framework.react_component",
+        "proposed_by": "llm"
+      },
+      "signature": null,
+      "state": "AUDITED_CLEAN",
+      "subdomain_id": "6b",
+      "tokens": [
+        {
+          "citation": "frag:frag-007",
+          "kind": "clause",
+          "text": "frag-007"
+        },
+        {
+          "citation": "subdomain:6b",
+          "kind": "identifier",
+          "text": "6b"
+        }
+      ]
+    }
+  ],
+  "classifications": [
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-001",
+      "routed_out": false,
+      "subdomain_id": "1b"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-002",
+      "routed_out": false,
+      "subdomain_id": "1b"
+    },
+    {
+      "assurance_cap": "CONTAINED_NOVEL",
+      "confidence": 0.0,
+      "family": "UNCLASSIFIED",
+      "fragment_id": "frag-003",
+      "routed_out": false,
+      "subdomain_id": "8"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-004",
+      "routed_out": false,
+      "subdomain_id": "1a"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-005-a",
+      "routed_out": false,
+      "subdomain_id": "1a"
+    },
+    {
+      "assurance_cap": "NO_COUNTEREXAMPLE",
+      "confidence": 0.85,
+      "family": "REFUTABLE",
+      "fragment_id": "frag-005-b",
+      "routed_out": false,
+      "subdomain_id": "2a"
+    },
+    {
+      "assurance_cap": "AGREED",
+      "confidence": 0.83,
+      "family": "CONTEXT_DEPENDENT",
+      "fragment_id": "frag-006",
+      "routed_out": false,
+      "subdomain_id": "6b"
+    },
+    {
+      "assurance_cap": "AGREED",
+      "confidence": 0.83,
+      "family": "CONTEXT_DEPENDENT",
+      "fragment_id": "frag-007",
+      "routed_out": false,
+      "subdomain_id": "6b"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-008",
+      "routed_out": false,
+      "subdomain_id": "1e"
+    },
+    {
+      "assurance_cap": "PROVEN",
+      "confidence": 0.9,
+      "family": "PROVABLE",
+      "fragment_id": "frag-009",
+      "routed_out": false,
+      "subdomain_id": "1e"
+    }
+  ],
+  "config_snapshot": {
+    "audit_backend": "stub",
+    "b_fuzz": 256,
+    "c_stat": 0.95,
+    "max_specialists": 8,
+    "n_min": 20,
+    "tau_adopt": 0.5,
+    "tau_class": 0.8
+  },
+  "fragments": [
+    {
+      "id": "frag-001",
+      "security_relevant": false,
+      "source_anchor": "L7",
+      "text": "The `NormalizeRating` function shall be a pure function: for identical inputs it"
+    },
+    {
+      "id": "frag-002",
+      "security_relevant": false,
+      "source_anchor": "L8",
+      "text": "returns identical counts, is deterministic and idempotent, and the round-trip of"
+    },
+    {
+      "id": "frag-003",
+      "security_relevant": false,
+      "source_anchor": "L9",
+      "text": "encode then decode reproduces the input."
+    },
+    {
+      "id": "frag-004",
+      "security_relevant": false,
+      "source_anchor": "L12",
+      "text": "The `Feedback` type shall be non-null and its `severity` field shall be an enum of"
+    },
+    {
+      "id": "frag-005-a",
+      "security_relevant": false,
+      "source_anchor": "L13",
+      "text": "{low, high}; the data type must be well-formed and non-empty."
+    },
+    {
+      "id": "frag-005-b",
+      "security_relevant": false,
+      "source_anchor": "L13",
+      "text": "{low, high}; the data type must be well-formed and non-empty."
+    },
+    {
+      "id": "frag-006",
+      "security_relevant": false,
+      "source_anchor": "L16",
+      "text": "The Submit button shall be selectable via click and the feedback form shall be"
+    },
+    {
+      "id": "frag-007",
+      "security_relevant": false,
+      "source_anchor": "L17",
+      "text": "navigable by an operator in the documented interaction scenario."
+    },
+    {
+      "id": "frag-008",
+      "security_relevant": false,
+      "source_anchor": "L20",
+      "text": "The collector shall parse the raw payload and serialize each feedback record to"
+    },
+    {
+      "id": "frag-009",
+      "security_relevant": false,
+      "source_anchor": "L21",
+      "text": "JSON format following the documented schema."
+    }
+  ],
+  "open_questions": [
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-001",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 1b: no specialist declares scope for sub-domain '1b'"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-002",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 1b: no specialist declares scope for sub-domain '1b'"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-003",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "fragment frag-003 matched no ①–⑦ row; handled under maximum containment (CONTAINED-NOVEL) and escalated"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-003",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 8: no specialist declares scope for sub-domain '8'"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-004",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 1a: no specialist declares scope for sub-domain '1a'"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-005-a",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 1a: no specialist declares scope for sub-domain '1a'"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-005-b",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 2a: no specialist declares scope for sub-domain '2a'"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-008",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 1e: no specialist declares scope for sub-domain '1e'"
+    },
+    {
+      "confidence_capped": true,
+      "fragment_id": "frag-009",
+      "hallucination_possible": false,
+      "kind": "novel",
+      "text": "no specialist for 1e: no specialist declares scope for sub-domain '1e'"
+    }
+  ],
+  "schema_version": 1,
+  "stage_records": [
+    {
+      "deterministic": false,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "text": "The `NormalizeRating` function shall be a pure function: for identical inputs it"
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "text": "returns identical counts, is deterministic and idempotent, and the round-trip of"
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "text": "encode then decode reproduces the input."
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "text": "The `Feedback` type shall be non-null and its `severity` field shall be an enum of"
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-005",
+      "inputs": {
+        "text": "{low, high}; the data type must be well-formed and non-empty."
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-006",
+      "inputs": {
+        "text": "The Submit button shall be selectable via click and the feedback form shall be"
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-007",
+      "inputs": {
+        "text": "navigable by an operator in the documented interaction scenario."
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-008",
+      "inputs": {
+        "text": "The collector shall parse the raw payload and serialize each feedback record to"
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-009",
+      "inputs": {
+        "text": "JSON format following the documented schema."
+      },
+      "outputs": {
+        "security_relevant": false
+      },
+      "stage": "S1"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005",
+      "inputs": {
+        "text": "{low, high}; the data type must be well-formed and non-empty."
+      },
+      "outputs": {
+        "decomposed_into": [
+          "frag-005-a",
+          "frag-005-b"
+        ],
+        "edges": [
+          [
+            "frag-005",
+            "frag-005-a"
+          ],
+          [
+            "frag-005",
+            "frag-005-b"
+          ]
+        ],
+        "focus": [
+          "1a",
+          "2a"
+        ]
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "<order>",
+      "inputs": {
+        "n": 10
+      },
+      "outputs": {
+        "cycle": [],
+        "order": [
+          "frag-001",
+          "frag-002",
+          "frag-003",
+          "frag-004",
+          "frag-005-a",
+          "frag-005-b",
+          "frag-006",
+          "frag-007",
+          "frag-008",
+          "frag-009"
+        ]
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "text": "The `NormalizeRating` function shall be a pure function: for identical inputs it"
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1b"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "subdomain": "1b"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-001/1b",
+          "law_or_invariant:law_or_invariant/frag-001/1b",
+          "property_test:property_test/frag-001/1b"
+        ],
+        "scaffold_items": [
+          "state the law; keep the function side-effect-free",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-001",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '1b'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "text": "returns identical counts, is deterministic and idempotent, and the round-trip of"
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1b"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "subdomain": "1b"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-002/1b",
+          "law_or_invariant:law_or_invariant/frag-002/1b",
+          "property_test:property_test/frag-002/1b"
+        ],
+        "scaffold_items": [
+          "state the law; keep the function side-effect-free",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-002",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '1b'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "text": "encode then decode reproduces the input."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "8"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "subdomain": "8"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "containment_boundary:containment_boundary/frag-003/8",
+          "defense_in_depth_harness:defense_in_depth_harness/frag-003/8"
+        ],
+        "scaffold_items": [
+          "maximum containment: minimal blast radius; isolate behind one interface boundary",
+          "minimal blast-radius boundary (maximum containment)",
+          "full defense-in-depth harness: rebuttal + audit + review + runtime guards + monitoring"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-003",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '8'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "text": "The `Feedback` type shall be non-null and its `severity` field shall be an enum of"
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1a"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "subdomain": "1a"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-004/1a",
+          "law_or_invariant:law_or_invariant/frag-004/1a",
+          "property_test:property_test/frag-004/1a"
+        ],
+        "scaffold_items": [
+          "encode the property in types; make illegal states unrepresentable",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-004",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '1a'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "text": "{low, high}; the data type must be well-formed and non-empty."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1a"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "subdomain": "1a"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-005-a/1a",
+          "law_or_invariant:law_or_invariant/frag-005-a/1a",
+          "property_test:property_test/frag-005-a/1a"
+        ],
+        "scaffold_items": [
+          "encode the property in types; make illegal states unrepresentable",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-005-a",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '1a'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-b",
+      "inputs": {
+        "text": "{low, high}; the data type must be well-formed and non-empty."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "2a"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-005-b",
+      "inputs": {
+        "subdomain": "2a"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "boundary_catalog:boundary_catalog/frag-005-b/2a",
+          "property_catalog:property_catalog/frag-005-b/2a"
+        ],
+        "scaffold_items": [
+          "enumerate the boundaries before generation",
+          "enumerate boundaries / select relations",
+          "rebuttal probe harness"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-005-b",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '2a'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-006",
+      "inputs": {
+        "text": "The Submit button shall be selectable via click and the feedback form shall be"
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "6b"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-006",
+      "inputs": {
+        "subdomain": "6b"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "glossary:glossary/frag-006/6b",
+          "rule_table:rule_table/frag-006/6b"
+        ],
+        "scaffold_items": [
+          "define scenarios/acceptance criteria; review",
+          "agreement artifact (rule table / scenarios / glossary)",
+          "Author sign-off hook"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-006",
+      "inputs": {
+        "attempt": 1,
+        "scaffold": "6b"
+      },
+      "outputs": {
+        "artifact": "art-frag-006-6fea53aa0257",
+        "state": "PROPOSED"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-006",
+      "inputs": {
+        "artifact": "art-frag-006-6fea53aa0257"
+      },
+      "outputs": {
+        "state": "REBUTTED_CLEAN"
+      },
+      "stage": "S5"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-006",
+      "inputs": {
+        "artifact": "art-frag-006-6fea53aa0257"
+      },
+      "outputs": {
+        "state": "AUDITED_CLEAN"
+      },
+      "stage": "S6"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-007",
+      "inputs": {
+        "text": "navigable by an operator in the documented interaction scenario."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "6b"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-007",
+      "inputs": {
+        "subdomain": "6b"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "glossary:glossary/frag-007/6b",
+          "rule_table:rule_table/frag-007/6b"
+        ],
+        "scaffold_items": [
+          "define scenarios/acceptance criteria; review",
+          "agreement artifact (rule table / scenarios / glossary)",
+          "Author sign-off hook"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-007",
+      "inputs": {
+        "attempt": 1,
+        "scaffold": "6b"
+      },
+      "outputs": {
+        "artifact": "art-frag-007-b5049ec13165",
+        "state": "PROPOSED"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-007",
+      "inputs": {
+        "artifact": "art-frag-007-b5049ec13165"
+      },
+      "outputs": {
+        "state": "REBUTTED_CLEAN"
+      },
+      "stage": "S5"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-007",
+      "inputs": {
+        "artifact": "art-frag-007-b5049ec13165"
+      },
+      "outputs": {
+        "state": "AUDITED_CLEAN"
+      },
+      "stage": "S6"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-008",
+      "inputs": {
+        "text": "The collector shall parse the raw payload and serialize each feedback record to"
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1e"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-008",
+      "inputs": {
+        "subdomain": "1e"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-008/1e",
+          "law_or_invariant:law_or_invariant/frag-008/1e",
+          "property_test:property_test/frag-008/1e"
+        ],
+        "scaffold_items": [
+          "define the grammar; derive the artifact; state the round-trip law",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-008",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '1e'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-009",
+      "inputs": {
+        "text": "JSON format following the documented schema."
+      },
+      "outputs": {
+        "framework": null,
+        "routed_out": false,
+        "subdomain": "1e"
+      },
+      "stage": "S2"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "frag-009",
+      "inputs": {
+        "subdomain": "1e"
+      },
+      "outputs": {
+        "scaffold_artifacts": [
+          "type_declaration:type_declaration/frag-009/1e",
+          "law_or_invariant:law_or_invariant/frag-009/1e",
+          "property_test:property_test/frag-009/1e"
+        ],
+        "scaffold_items": [
+          "define the grammar; derive the artifact; state the round-trip law",
+          "declare types / encode the property",
+          "state the law or invariant",
+          "property test"
+        ]
+      },
+      "stage": "S3"
+    },
+    {
+      "deterministic": false,
+      "fragment_id": "frag-009",
+      "inputs": {
+        "attempt": 1
+      },
+      "outputs": {
+        "declined": "no specialist declares scope for sub-domain '1e'"
+      },
+      "stage": "S4"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "<consistency>",
+      "inputs": {
+        "n_artifacts": 2
+      },
+      "outputs": {
+        "conflicts": []
+      },
+      "stage": "S8"
+    },
+    {
+      "deterministic": true,
+      "fragment_id": "<assurance>",
+      "inputs": {
+        "n_composites": 1
+      },
+      "outputs": {
+        "frag-005": {
+          "label": null,
+          "parts": {
+            "frag-005-a": null,
+            "frag-005-b": null
+          }
+        }
+      },
+      "stage": "S8"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "case_id": "llm_claim_audit",
+  "description": "Apply Claim-Auditor's moat agents to the LLM agent's own commit claims.",
+  "matched": [],
+  "ambiguous": [],
+  "gap": [],
+  "unknown_agents": [],
+  "executed": true,
+  "agent_results": [
+    {
+      "agent_id": "process.commit_message_reality",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "process.changelog_reality",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "process.todo_promise",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "process.pr_description_drift",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    }
+  ],
+  "exit_code": 0
+}

@@ -1,0 +1,48 @@
+{
+  "case_id": "self_apply",
+  "description": "Self-apply of Claim-Auditor to this repo as part of the integrated\nBuilder -> Security -> Auditor verification run.",
+  "matched": [
+    {
+      "claim_type": "ruff_violation",
+      "agent_id": "tool.ruff"
+    },
+    {
+      "claim_type": "mypy_violation",
+      "agent_id": "tool.mypy"
+    }
+  ],
+  "ambiguous": [],
+  "gap": [],
+  "unknown_agents": [],
+  "executed": true,
+  "agent_results": [
+    {
+      "agent_id": "tool.ruff",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "tool.mypy",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 5,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 2
+    },
+    {
+      "agent_id": "process.commit_message_reality",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    }
+  ],
+  "exit_code": 2
+}

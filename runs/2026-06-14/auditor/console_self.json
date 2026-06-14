@@ -1,0 +1,419 @@
+{
+  "case_id": "placed_case",
+  "description": "Auto-placed from a requirement chain: CONSOLE_REQUIREMENTS_SPEC.md.\nDetected languages: javascript, python, shell, sql.",
+  "matched": [
+    {
+      "claim_type": "bandit_finding",
+      "agent_id": "tool.bandit"
+    },
+    {
+      "claim_type": "changelog_reality:claimed_not_logged",
+      "agent_id": "process.changelog_reality"
+    },
+    {
+      "claim_type": "changelog_reality:unlogged_change",
+      "agent_id": "process.changelog_reality"
+    },
+    {
+      "claim_type": "commit_message_mismatch:file_mention",
+      "agent_id": "process.commit_message_reality"
+    },
+    {
+      "claim_type": "commit_message_mismatch:ruff",
+      "agent_id": "process.commit_message_reality"
+    },
+    {
+      "claim_type": "critical_taboo:secret_committed_dotenv",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:secret_credential_token_aws_access_key",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:secret_credential_token_github_fine_grained_pat",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:secret_credential_token_github_token",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:secret_credential_token_google_api_key",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:secret_credential_token_slack_token",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:secret_credential_token_stripe_secret_key",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:secret_private_key",
+      "agent_id": "domain.secret"
+    },
+    {
+      "claim_type": "critical_taboo:shell_dd_to_device",
+      "agent_id": "domain.shell"
+    },
+    {
+      "claim_type": "critical_taboo:shell_mkfs",
+      "agent_id": "domain.shell"
+    },
+    {
+      "claim_type": "critical_taboo:shell_redirect_to_device",
+      "agent_id": "domain.shell"
+    },
+    {
+      "claim_type": "critical_taboo:shell_rm_rf_root",
+      "agent_id": "domain.shell"
+    },
+    {
+      "claim_type": "critical_taboo:sql_delete_without_where",
+      "agent_id": "domain.sql"
+    },
+    {
+      "claim_type": "critical_taboo:sql_drop_column",
+      "agent_id": "domain.sql"
+    },
+    {
+      "claim_type": "critical_taboo:sql_drop_database",
+      "agent_id": "domain.sql"
+    },
+    {
+      "claim_type": "critical_taboo:sql_drop_schema",
+      "agent_id": "domain.sql"
+    },
+    {
+      "claim_type": "critical_taboo:sql_drop_table",
+      "agent_id": "domain.sql"
+    },
+    {
+      "claim_type": "critical_taboo:sql_truncate",
+      "agent_id": "domain.sql"
+    },
+    {
+      "claim_type": "critical_taboo:sql_update_without_where",
+      "agent_id": "domain.sql"
+    },
+    {
+      "claim_type": "critical_taboo:vcs_delete_protected",
+      "agent_id": "domain.vcs"
+    },
+    {
+      "claim_type": "critical_taboo:vcs_force_push_protected",
+      "agent_id": "domain.vcs"
+    },
+    {
+      "claim_type": "dependency_reality:unmanifested",
+      "agent_id": "process.dependency_reality"
+    },
+    {
+      "claim_type": "discarded_design_resurrected",
+      "agent_id": "lang.python.c_hist"
+    },
+    {
+      "claim_type": "env_var_missing",
+      "agent_id": "lang.python.env_consistency"
+    },
+    {
+      "claim_type": "env_var_unused",
+      "agent_id": "lang.python.env_consistency"
+    },
+    {
+      "claim_type": "eslint_violation",
+      "agent_id": "tool.eslint"
+    },
+    {
+      "claim_type": "init_mount_without_scripts",
+      "agent_id": "infra.cross_file_consistency"
+    },
+    {
+      "claim_type": "init_script_not_mounted",
+      "agent_id": "infra.cross_file_consistency"
+    },
+    {
+      "claim_type": "manifesto_constant_violation",
+      "agent_id": "manifesto.regex_const"
+    },
+    {
+      "claim_type": "mypy_violation",
+      "agent_id": "tool.mypy"
+    },
+    {
+      "claim_type": "pr_description_drift:docs",
+      "agent_id": "process.pr_description_drift"
+    },
+    {
+      "claim_type": "pr_description_drift:remove",
+      "agent_id": "process.pr_description_drift"
+    },
+    {
+      "claim_type": "pr_description_drift:rename",
+      "agent_id": "process.pr_description_drift"
+    },
+    {
+      "claim_type": "pr_description_drift:tests",
+      "agent_id": "process.pr_description_drift"
+    },
+    {
+      "claim_type": "ruff_violation",
+      "agent_id": "tool.ruff"
+    },
+    {
+      "claim_type": "semgrep_finding",
+      "agent_id": "tool.semgrep"
+    },
+    {
+      "claim_type": "shellcheck_violation",
+      "agent_id": "tool.shellcheck"
+    },
+    {
+      "claim_type": "spec_mismatch",
+      "agent_id": "lang.python.c_spec"
+    },
+    {
+      "claim_type": "sqlfluff_violation",
+      "agent_id": "tool.sqlfluff"
+    },
+    {
+      "claim_type": "todo_promise:unfulfilled",
+      "agent_id": "process.todo_promise"
+    },
+    {
+      "claim_type": "vulnerability:grype",
+      "agent_id": "tool.grype"
+    },
+    {
+      "claim_type": "vulnerability:osv",
+      "agent_id": "tool.osv_scanner"
+    }
+  ],
+  "ambiguous": [],
+  "gap": [
+    {
+      "claim_type": "vulnerability:dedup",
+      "languages": [
+        "javascript",
+        "python",
+        "shell",
+        "sql"
+      ],
+      "environments": []
+    }
+  ],
+  "unknown_agents": [],
+  "executed": true,
+  "agent_results": [
+    {
+      "agent_id": "tool.bandit",
+      "skipped": true,
+      "skip_reason": "bandit executable not found in PATH",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "process.changelog_reality",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "process.commit_message_reality",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "domain.secret",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "domain.shell",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "domain.sql",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "domain.vcs",
+      "skipped": true,
+      "skip_reason": "no pre-push ref updates in context; domain.vcs runs at the pre-push choke point (claim-audit hooks pre-push)",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "process.dependency_reality",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "lang.python.c_hist",
+      "skipped": true,
+      "skip_reason": "decision_log dir not found: docs/decisions",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "lang.python.env_consistency",
+      "skipped": true,
+      "skip_reason": "auditor.yaml contextual.env_consistency.dotenv_path missing",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "tool.eslint",
+      "skipped": true,
+      "skip_reason": "eslint produced no JSON output (config error or no files matched)",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "infra.cross_file_consistency",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "manifesto.regex_const",
+      "skipped": true,
+      "skip_reason": "auditor.yaml ethical.manifesto_path missing",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "tool.mypy",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "process.pr_description_drift",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "tool.ruff",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "tool.semgrep",
+      "skipped": true,
+      "skip_reason": "semgrep executable not found in PATH",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "tool.shellcheck",
+      "skipped": true,
+      "skip_reason": "shellcheck executable not found in PATH",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "lang.python.c_spec",
+      "skipped": true,
+      "skip_reason": "spec_path required for c_spec agent",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "tool.sqlfluff",
+      "skipped": true,
+      "skip_reason": "sqlfluff executable not found in PATH",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "process.todo_promise",
+      "skipped": false,
+      "skip_reason": null,
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 0
+    },
+    {
+      "agent_id": "tool.grype",
+      "skipped": true,
+      "skip_reason": "grype executable not found in PATH",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    },
+    {
+      "agent_id": "tool.osv_scanner",
+      "skipped": true,
+      "skip_reason": "osv-scanner executable not found in PATH",
+      "claim_count": 0,
+      "dcl_flagged_count": 0,
+      "evidence_files": [],
+      "exit_code": 1
+    }
+  ],
+  "exit_code": 2
+}

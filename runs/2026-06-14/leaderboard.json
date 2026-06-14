@@ -1,0 +1,99 @@
+{
+ "overall": {
+  "cases": 5,
+  "total_fragments": 38,
+  "total_artifacts_all": 32,
+  "total_lang_mismatched": 14,
+  "mean_classified_rate": 0.96,
+  "overall_lang_mismatch_rate": 0.4375
+ },
+ "cases": [
+  {
+   "case_id": "c1-claim-feedback",
+   "intended_languages": [
+    "go",
+    "typescript",
+    "python"
+   ],
+   "fragments": 10,
+   "classified_rate": 0.9,
+   "artifacts_all": 9,
+   "open_questions_all": 2,
+   "lang_matched_artifacts": 9,
+   "lang_mismatched_artifacts": 0,
+   "lang_mismatch_rate": 0.0,
+   "gated_artifacts": {
+    "go": 2,
+    "typescript": 4,
+    "react": 2,
+    "python": 5
+   }
+  },
+  {
+   "case_id": "c2-data-migration",
+   "intended_languages": [
+    "sql",
+    "shell"
+   ],
+   "fragments": 8,
+   "classified_rate": 1.0,
+   "artifacts_all": 8,
+   "open_questions_all": 0,
+   "lang_matched_artifacts": 0,
+   "lang_mismatched_artifacts": 8,
+   "lang_mismatch_rate": 1.0,
+   "gated_artifacts": {
+    "sql": 0,
+    "shell": 0
+   }
+  },
+  {
+   "case_id": "c3-rust-checksum",
+   "intended_languages": [
+    "rust"
+   ],
+   "fragments": 6,
+   "classified_rate": 1.0,
+   "artifacts_all": 5,
+   "open_questions_all": 1,
+   "lang_matched_artifacts": 0,
+   "lang_mismatched_artifacts": 5,
+   "lang_mismatch_rate": 1.0,
+   "gated_artifacts": {
+    "rust": 0
+   }
+  },
+  {
+   "case_id": "c4-ml-ranker",
+   "intended_languages": [
+    "python"
+   ],
+   "fragments": 10,
+   "classified_rate": 0.9,
+   "artifacts_all": 9,
+   "open_questions_all": 2,
+   "lang_matched_artifacts": 8,
+   "lang_mismatched_artifacts": 1,
+   "lang_mismatch_rate": 0.1111,
+   "gated_artifacts": {
+    "python": 9
+   }
+  },
+  {
+   "case_id": "c5-go-concurrency",
+   "intended_languages": [
+    "go"
+   ],
+   "fragments": 4,
+   "classified_rate": 1.0,
+   "artifacts_all": 1,
+   "open_questions_all": 3,
+   "lang_matched_artifacts": 1,
+   "lang_mismatched_artifacts": 0,
+   "lang_mismatch_rate": 0.0,
+   "gated_artifacts": {
+    "go": 1
+   }
+  }
+ ]
+}
