@@ -1,0 +1,593 @@
+{
+ "case": "claim-feedback",
+ "date": "2026-06-14",
+ "builder": {
+  "all": {
+   "fragments": 10,
+   "classifications": {
+    "1b": 2,
+    "8": 1,
+    "1a": 2,
+    "2a": 1,
+    "6b": 2,
+    "1e": 2
+   },
+   "artifacts_total": 9,
+   "artifact_states": {
+    "AUDITED_CLEAN": 9
+   },
+   "assurance": {
+    "PROVEN": 6,
+    "NO_COUNTEREXAMPLE": 1,
+    "AGREED": 2
+   },
+   "specialists_used": {
+    "lang.go.pure_function": 2,
+    "lang.typescript.type_structural": 2,
+    "lang.python.boundary": 1,
+    "framework.react_component": 2,
+    "lang.python.provable": 2
+   },
+   "open_questions": 2,
+   "stage_records": 61,
+   "delivered": 0
+  },
+  "go": {
+   "fragments": 10,
+   "classifications": {
+    "1b": 2,
+    "8": 1,
+    "1a": 2,
+    "2a": 1,
+    "6b": 2,
+    "1e": 2
+   },
+   "artifacts_total": 2,
+   "artifact_states": {
+    "AUDITED_CLEAN": 2
+   },
+   "assurance": {
+    "PROVEN": 2
+   },
+   "specialists_used": {
+    "lang.go.pure_function": 2
+   },
+   "open_questions": 9,
+   "stage_records": 47,
+   "delivered": 0
+  },
+  "python": {
+   "fragments": 10,
+   "classifications": {
+    "1b": 2,
+    "8": 1,
+    "1a": 2,
+    "2a": 1,
+    "6b": 2,
+    "1e": 2
+   },
+   "artifacts_total": 5,
+   "artifact_states": {
+    "AUDITED_CLEAN": 5
+   },
+   "assurance": {
+    "PROVEN": 4,
+    "NO_COUNTEREXAMPLE": 1
+   },
+   "specialists_used": {
+    "lang.python.pure_function": 2,
+    "lang.python.boundary": 1,
+    "lang.python.provable": 2
+   },
+   "open_questions": 6,
+   "stage_records": 53,
+   "delivered": 0
+  },
+  "react": {
+   "fragments": 10,
+   "classifications": {
+    "1b": 2,
+    "8": 1,
+    "1a": 2,
+    "2a": 1,
+    "6b": 2,
+    "1e": 2
+   },
+   "artifacts_total": 2,
+   "artifact_states": {
+    "AUDITED_CLEAN": 2
+   },
+   "assurance": {
+    "AGREED": 2
+   },
+   "specialists_used": {
+    "framework.react_component": 2
+   },
+   "open_questions": 9,
+   "stage_records": 47,
+   "delivered": 0
+  },
+  "typescript": {
+   "fragments": 10,
+   "classifications": {
+    "1b": 2,
+    "8": 1,
+    "1a": 2,
+    "2a": 1,
+    "6b": 2,
+    "1e": 2
+   },
+   "artifacts_total": 4,
+   "artifact_states": {
+    "AUDITED_CLEAN": 4
+   },
+   "assurance": {
+    "PROVEN": 2,
+    "AGREED": 2
+   },
+   "specialists_used": {
+    "lang.typescript.type_structural": 2,
+    "framework.react_component": 2
+   },
+   "open_questions": 7,
+   "stage_records": 51,
+   "delivered": 0
+  }
+ },
+ "auditor": {
+  "auditor": {
+   "exit_code": 2,
+   "matched": 3,
+   "gap": 0,
+   "executed": true,
+   "total_claims": 11,
+   "agents": {
+    "tool.ruff": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "tool.mypy": {
+     "claim_count": 11,
+     "exit": 2,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "tool.bandit": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "bandit executable not found in PATH"
+    },
+    "process.c_drift": {
+     "claim_count": 0,
+     "exit": 2,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "process.commit_message_reality": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    }
+   }
+  },
+  "builder": {
+   "exit_code": 2,
+   "matched": 2,
+   "gap": 0,
+   "executed": true,
+   "total_claims": 4,
+   "agents": {
+    "tool.ruff": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "tool.mypy": {
+     "claim_count": 4,
+     "exit": 2,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "process.commit_message_reality": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    }
+   }
+  },
+  "console": {
+   "exit_code": 2,
+   "matched": 47,
+   "gap": 1,
+   "executed": true,
+   "total_claims": 0,
+   "agents": {
+    "tool.bandit": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "bandit executable not found in PATH"
+    },
+    "process.changelog_reality": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "process.commit_message_reality": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "domain.secret": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "domain.shell": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "domain.sql": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "domain.vcs": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": true,
+     "skip_reason": "no pre-push ref updates in context; domain.vcs runs at the pre-push choke point (claim-audit hooks pre-push)"
+    },
+    "process.dependency_reality": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "lang.python.c_hist": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "decision_log dir not found: docs/decisions"
+    },
+    "lang.python.env_consistency": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "auditor.yaml contextual.env_consistency.dotenv_path missing"
+    },
+    "tool.eslint": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "eslint produced no JSON output (config error or no files matched)"
+    },
+    "infra.cross_file_consistency": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "manifesto.regex_const": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "auditor.yaml ethical.manifesto_path missing"
+    },
+    "tool.mypy": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "process.pr_description_drift": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "tool.ruff": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "tool.semgrep": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "semgrep executable not found in PATH"
+    },
+    "tool.shellcheck": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "shellcheck executable not found in PATH"
+    },
+    "lang.python.c_spec": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "spec_path required for c_spec agent"
+    },
+    "tool.sqlfluff": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "sqlfluff executable not found in PATH"
+    },
+    "process.todo_promise": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "tool.grype": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "grype executable not found in PATH"
+    },
+    "tool.osv_scanner": {
+     "claim_count": 0,
+     "exit": 1,
+     "skipped": true,
+     "skip_reason": "osv-scanner executable not found in PATH"
+    }
+   }
+  },
+  "security": {
+   "exit_code": 2,
+   "matched": 2,
+   "gap": 0,
+   "executed": true,
+   "total_claims": 5,
+   "agents": {
+    "tool.ruff": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "tool.mypy": {
+     "claim_count": 5,
+     "exit": 2,
+     "skipped": false,
+     "skip_reason": null
+    },
+    "process.commit_message_reality": {
+     "claim_count": 0,
+     "exit": 0,
+     "skipped": false,
+     "skip_reason": null
+    }
+   }
+  }
+ },
+ "tests": {
+  "Claim-Auditor": {
+   "passed": 2089,
+   "skipped": 9,
+   "failed": 0,
+   "note": "全合格。jsonschema 導入後。"
+  },
+  "Claim-builder": {
+   "passed": 384,
+   "skipped": 12,
+   "failed": 0
+  },
+  "Claim-Security-": {
+   "passed": 9,
+   "skipped": 1,
+   "failed": 0
+  },
+  "total_passed": 2482
+ },
+ "inventory": {
+  "auditor_agents_total": 46,
+  "by_status": {
+   "ACTIVE": 32,
+   "STUB": 14
+  },
+  "by_kind": {
+   "detector": 30,
+   "dispatcher": 1,
+   "aggregator": 1,
+   "adapter": 14
+  },
+  "by_tier": {
+   "1": 18,
+   "2": 6,
+   "3": 20,
+   "4": 2
+  },
+  "builder_specialists": 8
+ },
+ "tool_availability": {
+  "present": [
+   "ruff",
+   "mypy",
+   "eslint",
+   "tsc",
+   "go",
+   "cargo"
+  ],
+  "absent": [
+   "bandit",
+   "semgrep",
+   "trivy",
+   "grype",
+   "osv-scanner",
+   "sqlfluff",
+   "shellcheck",
+   "clippy(via cargo present)"
+  ]
+ },
+ "axis_coverage": {
+  "go": "lang.go.pure_function (1b) のみ — 1a/6b/1e fragment は specialist 不在で open question 化",
+  "typescript": "lang.typescript.type_structural (1a) + python boundary 流用; 4/10 artifact",
+  "react": "framework.react_component (6b) のみ — 2/10 artifact",
+  "python": "最広 (provable/boundary/contract/pure_function) — 5/10 artifact"
+ },
+ "agents_used": {
+  "claude_code_subagents_launched": 0,
+  "note_subagents": "本検証は全工程を主エージェントが直接実行 (Agent tool 未使用)。",
+  "auditor_agents_dispatched_per_repo": {
+   "auditor": 5,
+   "builder": 3,
+   "console": 23,
+   "security": 3
+  },
+  "auditor_agents_dispatched_total_invocations": 34,
+  "auditor_distinct_agents_used": [
+   "domain.secret",
+   "domain.shell",
+   "domain.sql",
+   "domain.vcs",
+   "infra.cross_file_consistency",
+   "lang.python.c_hist",
+   "lang.python.c_spec",
+   "lang.python.env_consistency",
+   "manifesto.regex_const",
+   "process.c_drift",
+   "process.changelog_reality",
+   "process.commit_message_reality",
+   "process.dependency_reality",
+   "process.pr_description_drift",
+   "process.todo_promise",
+   "tool.bandit",
+   "tool.eslint",
+   "tool.grype",
+   "tool.mypy",
+   "tool.osv_scanner",
+   "tool.ruff",
+   "tool.semgrep",
+   "tool.shellcheck",
+   "tool.sqlfluff"
+  ],
+  "auditor_distinct_agents_count": 24,
+  "builder_distinct_specialists_used": [
+   "framework.react_component",
+   "lang.go.pure_function",
+   "lang.python.boundary",
+   "lang.python.provable",
+   "lang.python.pure_function",
+   "lang.typescript.type_structural"
+  ],
+  "builder_distinct_specialists_count": 6
+ },
+ "existing_case_tests": {
+  "source": "Claim-Auditor/tests/evaluation",
+  "synthetic_corpus": {
+   "case_count": 51,
+   "detectors": 7,
+   "overall": {
+    "tp": 24,
+    "fp": 0,
+    "fn": 3,
+    "precision": 1.0,
+    "recall": 0.8889,
+    "f1": 0.9412
+   },
+   "per_detector": {
+    "lang.python.c_hist": {
+     "tp": 5,
+     "fp": 0,
+     "fn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "lang.python.c_spec": {
+     "tp": 5,
+     "fp": 0,
+     "fn": 1,
+     "precision": 1.0,
+     "recall": 0.8333,
+     "f1": 0.9091
+    },
+    "process.changelog_reality": {
+     "tp": 2,
+     "fp": 0,
+     "fn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "process.commit_message_reality": {
+     "tp": 5,
+     "fp": 0,
+     "fn": 1,
+     "precision": 1.0,
+     "recall": 0.8333,
+     "f1": 0.9091
+    },
+    "process.dependency_reality": {
+     "tp": 2,
+     "fp": 0,
+     "fn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "process.pr_description_drift": {
+     "tp": 4,
+     "fp": 0,
+     "fn": 0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0
+    },
+    "process.todo_promise": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 1,
+     "precision": 1.0,
+     "recall": 0.5,
+     "f1": 0.6667
+    }
+   }
+  },
+  "realworld_corpus": {
+   "case_count": 7,
+   "detectors": 3,
+   "overall": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "example_cases": [
+   "mixed_language",
+   "process_audit_dr001",
+   "python_basic",
+   "python_strict",
+   "typescript_basic"
+  ],
+  "engine_n_calibration": [
+   "nversion_diff",
+   "scope_curvature",
+   "source_coverage"
+  ],
+  "corpus_eval_tests": {
+   "passed": 88,
+   "note": "tests/test_evaluation_corpus.py + scoring + ears precision; 全緑で baseline 再現"
+  },
+  "other_repos_scope_note": "list_repos/add_repo ツールは本セッションで利用不可のためスコープ外リポは未確認。集計対象はディスク上の5リポ。"
+ }
+}
