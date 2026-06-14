@@ -7,47 +7,58 @@
 
 ---
 
-## 総括（先に結論）
+## 製品の本質（評価軸の訂正）
 
-| 製品 | 実体判定 | 一言 |
+> **この製品群は「コード生成器」ではない。** 巨大な DB も推論エンジンも持たず、コードを
+> 生むのは LLM の役目。3 製品の価値は **LLM 生成物に嘘がないか（＝真か）を、LLM 非依存で
+> 決定論的に判定する「真偽ゲート」** にある（INV-R2 / INV-S2：判定に LLM を入れない）。
+> よって正しい評価軸は「コードを生成できたか」ではなく
+> **「真を通し、嘘を弾けるか」**。スタブ生成器は LLM が差し込まれるシームに過ぎない。
+
+## 総括（先に結論 — 真偽ゲートとして評価）
+
+| 製品 | 判定対象 | 実体判定（ライブ実証） |
 |---|---|---|
-| **Auditor** | ✅ **本物** | 仕込んだ虚偽を実際に捕捉（ライブ実証）。案件正規化＝実 set 演算。ただし 46 中 14 が STUB |
-| **Security** | 🟡 **本物だがリファレンス級** | STRIDE/ASVS L0–L3 の単調スケーリングは正しい。判定は部分文字列照合。**初回案件では未発火だった** |
-| **Builder** | 🟠 **骨格は本物・生成は空スタブ** | パイプラインは正しく動くが、生成物は `// scaffold-filled stub`。**実コードは作っていない** |
+| **Auditor** | コミット/PR/変更の主張 vs 実体 | ✅ **本物** 仕込んだ虚偽を捕捉、正直は通過。案件正規化＝実 set 演算 |
+| **Builder** | LLM 生成 artifact が主張どおり真か | ✅ **本物** 偽の代数則・捏造引用を実行/接地検査で棄却、真は CLEAN |
+| **Security** | 生成物が secure-behavior を実現したか | ✅ **本物** stub→FINDINGS、mitigation実現→SECURED、taboo→FINDINGS、L0–L3 単調 |
 
-> **重要な自己訂正:** 前回までの「artifact 9 件 AUDITED_CLEAN」「Security ✅ 機能」
-> 「統合 ✅ 連携」は**過大評価**だった。artifact はパイプライン配管の通過記録で
-> あって生成コードではなく、Security は初回案件に security fragment が無く一度も
-> 発火していなかった。以下に実体を示す。
+3 製品はすべて**同一の思想**＝決定論的・LLM 非依存の真偽ゲート。差は判定対象だけ。
+
+> **自己訂正:** 前回「Builder は生成が空スタブ＝無意味」としたのは**評価軸の誤り**。
+> 生成は LLM の仕事で、スタブは LLM 不在時のプレースホルダ（設計どおり）。測るべきは
+> 真偽ゲートの正否で、それは下記のとおり本物。なお Security が初回案件で未発火だった点
+> （案件側に security fragment が無かった）は事実の訂正として残す。
 
 ---
 
-## 1. Builder — 「本当に構築できているか？」→ **生成は空スタブ**
+## 1. Builder — 「LLM 生成物の嘘を弾けるか？」→ **真偽ゲートは本物（ライブ実証）**
 
-artifact の中身を開けると:
+生成本体（`generator.py:168`）は LLM 不在時に `// scaffold-filled stub` を返すだけ。
+**これは欠陥ではない** — 生成は LLM の役目（`generate/llm_backend.py` が差込み点）。
+評価すべきは S5 反証 + S6 監査の**真偽ゲート**。同一 ProbeRebuttal に 3 種を投入:
 
-```json
-// runs/2026-06-14/builder/record_all.json の artifacts[0]
-"content": "// scaffold-filled stub for 1b\n",
-"history": ["PROPOSED", "REBUTTED_CLEAN", "AUDITED_CLEAN"],
-"provenance": {"origin": "lang.go.pure_function", "proposed_by": "llm"}
-```
+| 投入 artifact | 期待 | 実際 |
+|---|---|---|
+| 真: 実 involution `f(x)=-x`、引用接地 | CLEAN | ✅ CLEAN |
+| 嘘: involution と主張するが `f(x)=x+1` | 棄却 | ✅ REJECTED `metamorphic violation: fn(fn(1)) != 1` |
+| 嘘: 本文に無い `ghost` を引用（捏造） | 棄却 | ✅ REJECTED `ungrounded token: ghost` |
 
-- 生成本体 `generate/generator.py:168` が `f"// scaffold-filled stub for {subdomain_id}"`
-  を返す。**内蔵 specialist はすべて決定論スタブ**（specialist.yaml 自身が「参照実装は
-  決定論スタブ」と明記）。実生成は `generate/llm_backend.py`（LLM 接続時のみ）に存在。
-- つまり **「9 artifact AUDITED_CLEAN」= 9 個の空コメント文字列が trivial な審査を
-  通過しただけ**。動くコードは 1 行も生成されていない。
-- **正しく機能している部分:** S1 分解 → S2 分類 → strategy → scaffold → generate →
-  rebuttal → audit → 状態機械（PROPOSED→REBUTTED_CLEAN→AUDITED_CLEAN）という
-  **アーキテクチャ配管は実在し、決定論的に動く**。分類は実 keyword 表（A1/A2 の recall
-  限界つき）。
-- **意味のある指標と無意味な指標の分離:**
-  - 意味あり: 分類率、サブドメイン分布、A7 言語ミスマッチ率（specialist 選択の正否）
-  - **意味薄い: artifact 数 / delivered**（中身が空スタブのため「構築量」を表さない）
+真偽ゲートの実体（`rebuttal/probes.py`）:
+- **MetamorphicProbe** — artifact が自ら宣言した代数則を Auditor のカタログで**実行**して
+  検証（嘘の主張は反例で露見）。claim_auditor 接続時のみ登録、未接続は `unavailable` を
+  保持（沈黙して clean にしない）。
+- **BoundaryProbe** — 宣言境界で関数を実行、例外＝反例。
+- **SpecContradictionProbe** — 引用 `spec:` 句が本文で実現されてなければ矛盾。
+- **grounding** — token の引用識別子が本文に無ければ「捏造された自己申告」として棄却。
+- **S6 監査** — ungrounded token を `c_spec/c_hist/dependency_reality` 相当で finding 化。
 
-**判定:** Builder は *要件→分類→骨格* までは正しいが、*コード合成* は未実装（LLM backend
-差込み前提）。README の「architecture skeleton（生成系は決定論スタブ）」は正直な記述。
+判定は決定論・生成器から独立（FR-BLD-7 `assert_independent`）・LLM 非依存（INV-R2）。
+
+**判定:** Builder の真偽ゲートは**本物**。LLM が生成したコードでも、宣言した性質が偽なら
+実行で露見させ、引用の捏造を接地検査で弾く。「真なら通す」も確認済み。
+（補足: artifact 数 / delivered は配管通過の計数で「構築量」ではない。意味ある指標は
+真偽ゲートの pass/reject 正否と A7 言語ミスマッチ率。）
 
 ---
 
@@ -139,6 +150,7 @@ pr_description_drift/dependency_reality/todo_promise）は全て ACTIVE で実�
 |---|---|
 | テスト 2482 passed | ✅ 本物（各製品の単体/適合テスト） |
 | 案件テストコーパス P=1.00 | ✅ 本物（Auditor 実検出） |
-| Builder artifact 9 / delivered 0 | 🟠 配管通過の記録。**生成実体なし** |
+| Builder artifact 9 / delivered 0 | ⚪ 配管通過の計数（生成は LLM の役目）。製品価値は真偽ゲートで、それは✅実証 |
 | 言語ミスマッチ 43.75% (A7) | ✅ 本物（specialist 選択の実欠陥） |
+| Builder 真偽ゲート pass/reject | ✅ 本物（真→CLEAN、偽の代数則/捏造引用→REJECTED） |
 | Security ループ「機能」 | 🟡 初回案件では未発火。直接駆動で構造の正しさは確認 |

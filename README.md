@@ -23,8 +23,9 @@ Claim プラットフォーム（**Builder → Security → Auditor**）の統�
 
 数字の量産ではなく「本当に機能しているか」を中身まで開けて判定した評価書:
 **[`runs/2026-06-14/ASSESSMENT.md`](runs/2026-06-14/ASSESSMENT.md)**。
-要点: Auditor=本物（虚偽をライブ捕捉）／Security=構造は正しいがリファレンス級・初回未発火／
-Builder=骨格は本物だが生成は空スタブ。
+要点: 3 製品は「コード生成器」ではなく **LLM 生成物の真偽を判定する決定論ゲート**。
+Auditor=虚偽をライブ捕捉／Builder=偽の代数則・捏造引用を実行/接地で棄却・真は通過／
+Security=stub→FINDINGS・実現→SECURED（L0–L3 単調）。いずれも真偽ゲートとして本物。
 
 ## 可視化
 
