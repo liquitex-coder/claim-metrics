@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -n --arg a 'Standing working agreement (maintainer). Follow on every task: (1) Self-apply the Auditor to your own output AND to generated artifacts — verify deterministically, separate proven from asserted; (2) After auditing, present concrete improvements with file:line evidence; (3) Report progress as per-item and overall %; (4) Verify with code, not just docs, before asserting or implementing; (5) GitHub docs/PRs English-primary, Japanese-secondary; (6) Reply to the maintainer in Japanese. Out of scope: Obsidian chat archiving is a maintainer-side process (no tool access). See CLAUDE.md.' '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$a}}'",
+            "timeout": 10,
+            "statusMessage": "Loading working agreement"
+          }
+        ]
+      }
+    ]
+  }
+}
